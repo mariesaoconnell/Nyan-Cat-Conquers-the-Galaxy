@@ -25,42 +25,47 @@ hole.addEventListener('animationiteration', () => {
 
 // ==== FUNCTIONS ====
 
-// 🟢 GRAVITY FUNC
-setInterval(function(){
-  let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+// // 🟢 GRAVITY FUNC
+// setInterval(function(){
+//   let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
 
-  if(jumping === 0){
-    character.style.top = (characterTop+3)+"px";
-  };
+//   // 🟢 GRAVITY EFFECT
+//   if(jumping === 0){
+//     character.style.top = (characterTop+3)+"px";
+//   };
 
-  if(characterTop > 480){
-    alert(`Game Over. Score: ${score}`);
-    character.style.top = 100 + "px";
-    score = 0;
-  }
+//   let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
+//   let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"))
+//   let cTop = (-(500-characterTop));
 
-}, 10);
+//   // 🟢 VERIFYING GAME OVER CONDITIONS
+//   if((characterTop > 598) || ((blockLeft < 20) && (blockLeft >- 50) && ((cTop < holeTop) || (cTop > (holeTop + 130))))){
+//     alert(`Game Over. Score: ${score}`);
+//     character.style.top = 100 + "px";
+//     score = 0;
+//   }
+// },10 );
 
 // 🟢 JUMP FUNC
-function jump(){
-  jumping = 1;
+// function jump(){
+//   jumping = 1;
 
-  let jumpCount = 0;
+//   let jumpCount = 0;
 
-  let jumpInterval = setInterval(function(){
-    let characterTop =
-    parseInt(window.getComputedStyle(character).getPropertyValue("top"));
-    character.style.top = (characterTop - 5) + "px";
+//   let jumpInterval = setInterval(function(){
+//     let characterTop =
+//     parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+//     character.style.top = (characterTop - 5) + "px";
 
-    if((character > 6) && (counter < 15)){
-      character.style.top = (characterTop - 5) + "px";
-    }
+//     if((character > 6) && (counter < 15)){
+//       character.style.top = (characterTop - 5) + "px";
+//     }
 
-    if(jumpCount > 20){
-      clearInterval(jumpInterval);
-      jumping = 0;
-    }
+//     if(jumpCount > 20){
+//       clearInterval(jumpInterval);
+//       jumping = 0;
+//     }
 
-    jumpCount++;
-  }, 10);
-};
+//     jumpCount++;
+//   }, 10);
+// };
