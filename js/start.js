@@ -1,21 +1,17 @@
 let characterChoice = document.querySelector('#characterChoice');
-  console.log(characterChoice);
-
-
+console.log(characterChoice);
 
 // ==== ON START ====
-function load(){
-  ogNyan();
-
+function load() {
+	ogNyan();
 }
 
 load();
 
-
 // ==== CHARACTER CHANGE FUNCS ====
 
-function ogNyan(){
-  characterChoice.src = '/assets/OriginalNyanCat.webp';
+function ogNyan() {
+	characterChoice.src = '/assets/OriginalNyanCat.webp';
 }
 
 function pirateNyan() {
@@ -65,5 +61,3 @@ function toasterNyan() {
 function partyNyan() {
 	characterChoice.src = '/assets/BdayFlavor.webp';
 }
-
-
