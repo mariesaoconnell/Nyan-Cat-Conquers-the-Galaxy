@@ -22,11 +22,20 @@ hole.addEventListener('animationiteration', () => {
 });
 
 
-
 // ==== FUNCTIONS ====
 
+function startGame(){
+  setInterval((gravityFunc), 10); // gravity starts
+
+ hole.style.animationPlayState="running";
+ block.style.animationPlayState="running";
+
+}
+
+
+
 // 🟢 GRAVITY FUNC
-setInterval(function(){
+function gravityFunc() {
   let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
 
   // 🟢 GRAVITY EFFECT
@@ -39,12 +48,13 @@ setInterval(function(){
   let cTop = (-(500-characterTop));
 
   // 🟢 VERIFYING GAME OVER CONDITIONS
-  if((characterTop > 1100) || ((blockLeft < 20) && (blockLeft >- 50) && ((cTop < holeTop) || (cTop > (holeTop + 130))))){
+  if((characterTop > 1100) || ((blockLeft < 20) && (blockLeft >- 50) && ((characterTop < holeTop) || (cTop > (holeTop + 130))))){
     alert(`Game Over. Score: ${score}`);
     character.style.top = 500 + "px";
     score = 0;
   }
-},10 );
+}
+
 
 // 🟢 JUMP FUNC
 function jump(){

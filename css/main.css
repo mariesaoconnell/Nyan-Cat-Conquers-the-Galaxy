@@ -45,7 +45,8 @@ h1 {
   background-color: black;
   position: relative;
   left: 100%;
-  /* animation: block 5s infinite; */
+  animation: block 5s infinite;
+  animation-play-state: paused;
 }
 
 @keyframes block {
@@ -63,7 +64,8 @@ h1 {
   position: relative;
   left: 100%;
   top: -500px;
-  /* animation: block 5s infinite; */
+  animation: block 5s infinite;
+  animation-play-state: paused;
 }
 
 
