@@ -2,10 +2,11 @@ let characterChoice = document.querySelector('#characterChoice');
   console.log(characterChoice);
 
 
+
 // ==== ON START ====
 function load(){
   ogNyan();
-  
+
 }
 
 load();
@@ -64,3 +65,5 @@ function toasterNyan() {
 function partyNyan() {
 	characterChoice.src = '/assets/BdayFlavor.webp';
 }
+
+
