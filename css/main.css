@@ -19,13 +19,21 @@ h1 {
 }
 
 #stats{
-  background-color: rgba(36, 0, 143, 0.968);
-  text-align: center;
-  max-width: 90%;
+  background-color: rgba(10, 10, 10, 0.7);
+  text-align: left;
+  max-width: 89%;
   margin: auto;
   padding: 10px;
   color: white;
-
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+a{
+  padding: 50px;
+  text-decoration: none;
+  color: white;
 }
 
 #game {
@@ -34,15 +42,18 @@ h1 {
   border: 1px solid black;
   margin: auto;
   overflow: hidden;
-  background:rgba(36, 0, 143, 0.968);
+  background:rgba(0, 0, 0, .8);
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
 /* 🟢 OBSTACLE STYLING & ANIMATION */
 /* left to the width of the game */
 #block {
-  width: 50px;
+  width: 150px;
   height: 100%;
-  background-color: black;
+  background-image: url(/assets/asteroid-new-1c-1024x183.png);
+
   position: relative;
   left: 100%;
   animation: block 5s infinite;
@@ -51,16 +62,16 @@ h1 {
 
 @keyframes block {
   0% {left:100%}
-  100%{left: 0%}
+  100%{left: -20%}
 }
 
 
 /* 🟢 HOLE STYLING AND ANIMATION */
 
 #hole{
-  width: 50px;
-  height: 150px;
-  background-color: aqua;
+  width: 150px;
+  height: 300px;
+  background-image: url('/assets/rainbowgif.gif');
   position: relative;
   left: 100%;
   top: -500px;
@@ -71,11 +82,15 @@ h1 {
 
 /* 🟢 CHARACTER STYLING */
 #character{
-  width: 20px;
-  height: 20px;
-  background-color: red;
+  width: 100px;
+  height: 100px;
   position: absolute;
   top: 125px;
   /* top: 1100px; */
   border-radius: 50%;
+  padding-left: 40px;
+  margin: auto;
 }
+ img {
+  height: 100px;
+ }

@@ -4,21 +4,29 @@ const block = document.querySelector('#block');
 const hole = document.querySelector('#hole');
 const character = document.querySelector('#character');
 
+const body = document.querySelector('body');
+
+let scoreSpan = document.querySelector('#score');
+
 let jumping = 0;
 let score = 0;
 
 
 // ==== EVENT LISTENERS ====
+body.addEventListener('keypress',()=>{
+  startGame();
 
+});
 
 
 // 🟢 EVENT LISTENER -- changes positioning of hole
 
 hole.addEventListener('animationiteration', () => {
-	let random = -(Math.random() * 300 + 150);
+	let random = -(Math.random() * 700 + 300);
 	hole.style.top = `${random}px`;
 
   score++;
+  scoreUpdate();
 });
 
 
@@ -27,12 +35,17 @@ hole.addEventListener('animationiteration', () => {
 function startGame(){
   setInterval((gravityFunc), 10); // gravity starts
 
+  // block & hole animation toggle
  hole.style.animationPlayState="running";
  block.style.animationPlayState="running";
 
+
 }
 
-
+// 🟢 SCORE FUNC
+function scoreUpdate(){
+  scoreSpan.innerHTML = score;
+}
 
 // 🟢 GRAVITY FUNC
 function gravityFunc() {
@@ -45,10 +58,12 @@ function gravityFunc() {
 
   let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
   let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"))
-  let cTop = (-(500-characterTop));
+
+  // height of game - characterTop
+  let cTop = (-(1100-characterTop));
 
   // 🟢 VERIFYING GAME OVER CONDITIONS
-  if((characterTop > 1100) || ((blockLeft < 20) && (blockLeft >- 50) && ((characterTop < holeTop) || (cTop > (holeTop + 130))))){
+  if((characterTop >= 1025) || (((blockLeft < 100) && (blockLeft >-50)) && ((cTop < holeTop) || (cTop > holeTop + 270)))){
     alert(`Game Over. Score: ${score}`);
     character.style.top = 500 + "px";
     score = 0;
