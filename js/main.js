@@ -41,7 +41,7 @@ setInterval(function(){
   // 🟢 VERIFYING GAME OVER CONDITIONS
   if((characterTop > 1100) || ((blockLeft < 20) && (blockLeft >- 50) && ((cTop < holeTop) || (cTop > (holeTop + 130))))){
     alert(`Game Over. Score: ${score}`);
-    character.style.top = 100 + "px";
+    character.style.top = 500 + "px";
     score = 0;
   }
 },10 );
@@ -55,7 +55,14 @@ function jump(){
   let jumpInterval = setInterval(function(){
     let characterTop =
     parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+
     character.style.top = (characterTop - 5) + "px";
+
+    if(characterTop <= 125){
+
+      characterTop = 125;
+      character.style.top = 125+"px";
+    }
 
     if((character > 6) && (counter < 15)){
       character.style.top = (characterTop - 5) + "px";
