@@ -2,13 +2,17 @@
 
 // ==== VARIABLES ====
 
-const mainContainer = document.querySelector('#mainContainer');
 
+// CONTAINER DIVS -- START / GAME / GAME OVER
+const mainContainer = document.querySelector('#mainContainer');
 const gameContainer = document.querySelector('#game');
+const goContainer = document.querySelector('#gameOver');
 
 const gameStats = document.querySelector('#stats');
 
 const charImg = document.querySelector('#characterImg');
+
+const gameOvChar = document.querySelector('#gameOvcharacterChoice');
 
 
 let characterChoice = document.querySelector('#characterChoice');
@@ -20,6 +24,7 @@ let playerCharacter = null;
 function load() {
 	ogNyan();
 	updateCharacter();
+
 }
 load();
 
@@ -30,6 +35,8 @@ function clickedStart(){
 	gameStats.style.visibility='visible';
 
 	setCharacter();
+
+
 }
 
 
@@ -127,9 +134,14 @@ let scoreSpan = document.querySelector('#score');
 let jumping = 0;
 let score = 0;
 
+// let gameOver = document.querySelector('#gameOver')
+let goScore = document.querySelector('#goScore');
+
+
 // ==== EVENT LISTENERS ====
 body.addEventListener('keypress', () => {
 	startGame();
+	document.querySelector('#pressKey').style.visibility='hidden'
 });
 
 // 🟢 EVENT LISTENER -- changes positioning of hole
@@ -152,18 +164,19 @@ function startGame() {
 	block.style.animationPlayState = 'running';
 }
 
-// 🟢 SCORE FUNC
+// ==== 🟢 SCORE FUNC ====
 function scoreUpdate() {
 	scoreSpan.innerHTML = score;
+	goScore.innerHTML = scoreSpan.innerHTML;
 }
 
-// 🟢 GRAVITY FUNC
+// ==== 🟢 GRAVITY FUNC ====
 function gravityFunc() {
 	let characterTop = parseInt(
 		window.getComputedStyle(character).getPropertyValue('top')
 	);
 
-	// 🟢 GRAVITY EFFECT
+	// ==== 🟢 GRAVITY EFFECT ====
 	if (jumping === 0) {
 		character.style.top = characterTop + 3 + 'px';
 	}
@@ -176,20 +189,24 @@ function gravityFunc() {
 	// height of game - characterTop
 	let cTop = -(1100 - characterTop);
 
-	// 🟢 VERIFYING GAME OVER CONDITIONS
+	// ==== 🟢 VERIFYING GAME OVER CONDITIONS ====
 	if (
 		characterTop >= 1025 ||
 		(blockLeft < 100 &&
 			blockLeft > -50 &&
 			(cTop < holeTop || cTop > holeTop + 270))
 	) {
-		alert(`Game Over. Score: ${score}`);
-		character.style.top = 500 + 'px';
-		score = 0;
+
+		gameContainer.style.visibility = 'hidden';
+		gameStats.style.visibility = 'hidden';
+		goContainer.style.visibility="visible";
+
+
+
 	}
 }
 
-// 🟢 JUMP FUNC
+// ==== 🟢 JUMP FUNC ====
 function jump() {
 	jumping = 1;
 
@@ -224,12 +241,14 @@ function jump() {
 // ==== 🟢 SET CHAR FUNC ====
 function setCharacter() {
 	charImg.src = playerCharacter.src;
+	gameOvChar.src = playerCharacter.src;
 	console.log(charImg);
 }
 
 
-// ==== EXIT / RELOAD ====
+// ==== 🟢 EXIT / RELOAD ====
 
-function reload(){
+function mainMenu(){
 	window.location.reload();
+	score = 0;
 }

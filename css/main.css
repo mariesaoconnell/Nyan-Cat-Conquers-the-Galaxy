@@ -33,7 +33,9 @@ p {
   right: 0;
   margin-left: auto;
   margin-right: auto;
+  
 }
+
 
 #main {
   display: inline-flex;
@@ -47,7 +49,7 @@ p {
   justify-content: space-around;
 }
 
-#img>img {
+#img>img, #gameOver>img {
 
   margin: auto;
   width: 300px;
@@ -95,7 +97,7 @@ p {
   font-size: 100px;
   }
 
-#exit {
+#exit, #tryAgain {
   background: unset;
   border: unset;
   outline: unset;
@@ -104,6 +106,35 @@ p {
 }
 /* ------------------------------------------------------ */
 
+/* GAME OVER CSS */
+
+#gameOver {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(36, 0, 143, 0.968);
+  border-radius: 25px;
+  width: 1000px;
+  height: 600px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  visibility: hidden;
+}
+
+#gameoverP {
+  font-size: 100px;
+}
+
+p {
+  font-size: 30px;
+}
+#tryAgain {
+  font-size: 20px;
+}
+
+/* ------------------------------------------------------ */
 /* GAME CSS */
 
 
@@ -188,4 +219,39 @@ a{
 }
 #character>img {
   height: 100px;
+ }
+
+
+ /* PRESS ANY KEY STYLING */
+
+
+
+ #pressKey {
+   text-align: center;
+   font-size: 32px;
+   font-family: monospace;
+   letter-spacing: 5px;
+   animation: colorRotate 6s linear 0s infinite;
+ }
+
+ @keyframes colorRotate {
+   from {
+     color: #6666ff;
+   }
+
+   10% {
+     color: #0099ff;
+   }
+
+   50% {
+     color: #00ff00;
+   }
+
+   75% {
+     color: #ff3399;
+   }
+
+   100% {
+     color: #6666ff;
+   }
  }

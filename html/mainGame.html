@@ -22,12 +22,19 @@
 	<body>
 		<h1>Nyan Cat Conquers the Galaxy</h1>
 
+		<!-- GAME OVER DIV -->
+		<div id="gameOver">
+		<p id="gameoverP">GAME OVER!</p>
+		<p>Score: <span id="goScore"></span></p>
+ <img id="gameOvcharacterChoice" alt="Main Character" src=""/>
+<input id="tryAgain" type="button" value="Try Again!" onclick="mainMenu()">
+		</div>
+
+
+
+		<!-- START MENU DIV -->
 <div id="mainContainer">
 
-    <!-- <p> Player Name:
-      <input id="nameInput" type="text" value="Name Here!">
-      <input id="nameSubmit" type="submit">
-       </p> -->
     <div id="main">
 
       <div id="img">
@@ -76,16 +83,19 @@
 
 </div>
 
-	<!-- GAME -->
+
+
+
+	<!-- GAME DIV-->
 
 		<div id="stats">
 
 			<span>Score: <span id="score"></span></span>
 
-			<span><input id="exit" type="button" value="Exit" onclick="reload()"></span>
+			<span><input id="exit" type="button" value="Exit" onclick="mainMenu()"></span>
 		</div>
-
 		<div id="game">
+			<p id="pressKey">Press Any Key to Begin!</p>
 			<div id="block"></div>
 			<div id="hole"></div>
 			<div id="character"><img id="characterImg" src=""</div>
