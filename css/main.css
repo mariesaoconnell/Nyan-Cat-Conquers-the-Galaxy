@@ -33,7 +33,7 @@ p {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  
+
 }
 
 
@@ -179,11 +179,12 @@ a{
   width: 150px;
   height: 100%;
   background-image: url(/assets/asteroid-new-1c-1024x183.png);
-
   position: relative;
   left: 100%;
   animation: block 5s infinite;
   animation-play-state: paused;
+
+  box-shadow: 2px 2px 30px darkgrey;
 }
 
 @keyframes block {
@@ -198,6 +199,8 @@ a{
   width: 150px;
   height: 300px;
   background-image: url('/assets/rainbowgif.gif');
+  /* border: solid 2px green; */
+  background-color: black;
   position: relative;
   left: 100%;
   top: -500px;
@@ -227,6 +230,11 @@ a{
 
 
  #pressKey {
+  position: absolute;
+    left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
    text-align: center;
    font-size: 32px;
    font-family: monospace;
