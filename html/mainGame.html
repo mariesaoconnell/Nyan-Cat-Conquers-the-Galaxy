@@ -1,36 +1,94 @@
 <!DOCTYPE html>
 <html lang="en" onclick="jump()">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- LINK STYLE SHEETS & JS -->
-  <link rel="stylesheet" href="/css/main.css">
-  <script defer src="/js/main.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+		<!-- LINK STYLE SHEETS & JS -->
+		<link rel="stylesheet" href="/css/main.css" />
+		<script defer src="/js/main.js"></script>
+		<script defer src="/js/start.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap"
+			rel="stylesheet"
+		/>
 
+		<title>Nyan Cat Conquers the Galaxy</title>
+	</head>
 
-  <title> Nyan Cat Conquers the Galaxy </title>
-</head>
-<body>
-  <h1> Nyan Cat Conquers the Galaxy</h1>
-  <div id="stats">
-    <span>
-      Score: <span id="score"></span>
-    </span>
+	<body>
+		<h1>Nyan Cat Conquers the Galaxy</h1>
 
-    <span><a href="/html/startMenu.html">Exit</a></span>
-  </div>
+<div id="mainContainer">
 
-  <div id="game">
-    <div id="block"></div>
-    <div id="hole"></div>
-    <div id="character"><img src="/assets/OriginalNyanCat.webp"</div>
-  </div>
+    <!-- <p> Player Name:
+      <input id="nameInput" type="text" value="Name Here!">
+      <input id="nameSubmit" type="submit">
+       </p> -->
+    <div id="main">
 
+      <div id="img">
+        <img id="characterChoice" alt="Main Character" src=""/>
+      </div>
 
-</body>
+      <div id="menu">
+
+          <input id="start" type="button" value="Start" onclick="clickedStart()">
+
+      </div>
+    </div>
+    <hr>
+    <p> Choose a Character </p>
+    <hr>
+
+    <div id="characters">
+
+      <img  alt="Original Nyan" onclick="ogNyan()" src="/assets/OriginalNyanCat.webp"/>
+
+      <img alt="Pirate Nyan" onclick="pirateNyan()" src="/assets/PirateNyanCat.webp"/>
+
+      <img alt="Mummy Nyan" onclick="mummyNyan()" src="/assets/Mummy-2-.webp"/>
+
+      <img alt="Rasta Nyan" onclick="rastaNyan()" src="/assets/Rasta.webp"/>
+
+      <img alt="Game Boy Nyan" onclick="gbNyan()" src="/assets/Gb.webp"/>
+
+      <img alt="Witchy Nyan" onclick="witchyNyan()" src="/assets/Magical.webp"/>
+
+      <img alt="Taco Tuesday Nyan" onclick="tacoNyan()" src="/assets/Mexinyan.webp"/>
+
+      <img alt="Pumpkin Nyan" onclick="pumpkinNyan()" src="/assets/Pumpkin.webp"/>
+
+      <img alt="Smurf Nyan" onclick="smurfNyan()" src="/assets/Smurf.webp"/>
+
+      <img alt="Daft Punk Nyan" onclick="daftNyan()" src="/assets/Dafty.webp"/>
+
+      <img alt="Not Nyan" onclick="pusheenNyan()" src="/assets/Fat.webp"/>
+
+      <img alt="Toasty Nyan" onclick="toasterNyan()" src="/assets/SonOfaNyan.webp"/>
+
+      <img alt="Party Nyan" onclick="partyNyan()" src="/assets/BdayFlavor.webp"/>
+
+    </div>
+
+</div>
+
+	<!-- GAME -->
+
+		<div id="stats">
+
+			<span>Score: <span id="score"></span></span>
+
+			<span><input id="exit" type="button" value="Exit" onclick="reload()"></span>
+		</div>
+
+		<div id="game">
+			<div id="block"></div>
+			<div id="hole"></div>
+			<div id="character"><img id="characterImg" src=""</div>
+		</div>
+	</body>
 </html>

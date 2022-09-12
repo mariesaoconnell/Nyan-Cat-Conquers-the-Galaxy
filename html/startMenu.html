@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
 
-  <script defer src="/js/start.js"></script>
+  <script defer type="module" src="/js/start.js"></script>
 
   <link rel="stylesheet" href="/css/startMenu.css">
 
@@ -20,7 +20,10 @@
 
   <div id="mainContainer">
     <h1> Nyan Cat Conquers the Galaxy</h1>
-
+    <p> Player Name:
+      <input id="nameInput" type="text" value="Name Here!">
+      <input id="nameSubmit" type="submit">
+       </p>
     <div id="main">
 
       <div id="img">
@@ -36,7 +39,7 @@
     <hr>
     <p> Choose a Character </p>
     <hr>
-    
+
     <div id="characters">
 
       <img  alt="Original Nyan" onclick="ogNyan()" src="/assets/OriginalNyanCat.webp"/>
