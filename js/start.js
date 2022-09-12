@@ -167,7 +167,7 @@ function startGame() {
 // ==== 🟢 SCORE FUNC ====
 function scoreUpdate() {
 	scoreSpan.innerHTML = score;
-	goScore.innerHTML = scoreSpan.innerHTML;
+
 }
 
 // ==== 🟢 GRAVITY FUNC ====
@@ -197,12 +197,13 @@ function gravityFunc() {
 			(cTop < holeTop || cTop > holeTop + 270))
 	) {
 
+			hole.style.animationPlayState = 'paused';
+			block.style.animationPlayState = 'paused';
+
 		gameContainer.style.visibility = 'hidden';
 		gameStats.style.visibility = 'hidden';
 		goContainer.style.visibility="visible";
-
-
-
+		goScore.innerHTML = score;
 	}
 }
 
